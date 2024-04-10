@@ -6,6 +6,8 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import RootLayout from './layouts/RootLayout';
+import Error from './pages/Error';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter(
   createRoutesFromElements((
@@ -13,6 +15,8 @@ const router = createBrowserRouter(
       <Route path='/' element={<App />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/signin' element={<Signin />} />
+      <Route path='/profile' element={<Profile />} />
+      <Route path='*' element={<Error />} />
     </Route>
   )
 ))

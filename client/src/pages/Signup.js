@@ -1,18 +1,20 @@
 import axios from 'axios';
 import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 function SignUp() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [user, setUser] = useState(null)
 
   const submitHandler = e => {
     e.preventDefault()
     axios.post('http://localhost:8080/signup', {username: username, password: password})
-    .then((data)=> {
-      console.log(data)
+    .then((res)=> {
       setUsername('')//reset values to blank after post (submission)
       setPassword('')
+      setUser(res.data.username)
     })
   }
   return (
@@ -27,6 +29,7 @@ function SignUp() {
           <button className='px-3 py-1 rounded-sm bg-cyan-400' type='submit'>Submit</button>
           <button className='px-3 py-1 rounded-sm bg-cyan-400' type='button'>Cancel</button>
         </div>
+        {user ? <Navigate to='/profile' replace={true} state={user} /> : null}
       </form>
     </div>
   );
