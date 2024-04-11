@@ -6,9 +6,14 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      'sans': ['Avenir', 'Arial', 'sans-serif']
+      'sans': ['Avenir', 'Arial', 'sans']
     }
   },
-  plugins: [],
+  plugins: [
+    require("daisyui")
+  ],
+  daisyui: {
+    themes: ["retro"],
+  },
 }
 

@@ -1,5 +1,8 @@
 body {
-  background-color: black
+  background-color: #FFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @tailwind base;
