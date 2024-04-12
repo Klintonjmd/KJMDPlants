@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navigation() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-neutral text-neutral-content">
       <div className="flex-1">
       <Link to='/'>
         <a className="text-xl btn btn-ghost">KJMDPlants</a>

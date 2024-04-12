@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        '3xl': '0 50px 60px -15px rgba(0, 0, 0, 0.4)',
+      }
+    },
     fontFamily: {
       'sans': ['Avenir', 'Arial', 'sans']
     }
