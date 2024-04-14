@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "KJMDPlants";
+  }, []);
+
   return (
     <div className="min-h-screen hero bg-base-200">
       <div className="text-center hero-content">

@@ -1,10 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UserCard from "../components/Usercard";
 
 function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    document.title = "Sign In";
+  }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();

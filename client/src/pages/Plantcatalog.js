@@ -5,6 +5,10 @@ function Plantcatalog() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    document.title = "Plant Catalog";
+  }, []);
+
+  useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get(
