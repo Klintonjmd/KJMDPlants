@@ -29,7 +29,7 @@ function Plantcatalog() {
     <div>
       {json.data.map((plant) => {
         return (
-          <div className="shadow-xl card w-96 bg-base-100">
+          <div key={plant.id} className="shadow-xl card w-96 bg-base-100">
             <figure>
               <img
                 src={
