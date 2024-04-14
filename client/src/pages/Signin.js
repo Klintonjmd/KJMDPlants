@@ -9,7 +9,7 @@ function SignIn() {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/signup", {
+      .post("http://localhost:8080/signin", {
         username: username,
         password: password,
       })
@@ -28,7 +28,14 @@ function SignIn() {
       }}
     >
       <div className="bg-opacity-60 hero-overlay"></div>
-      <UserCard headerText={"Sign In"} submitHandler={submitHandler} />
+      <UserCard
+        headerText={"Sign In"}
+        submitHandler={submitHandler}
+        username={username}
+        password={password}
+        setPassword={setPassword}
+        setUsername={setUsername}
+      />
     </div>
   );
 }

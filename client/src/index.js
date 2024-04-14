@@ -13,6 +13,7 @@ import Signin from "./pages/Signin";
 import RootLayout from "./layouts/RootLayout";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
+import PlantCatalog from "./pages/Plantcatalog";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/signin" element={<Signin />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<Error />} />
+      <Route path="/plantcatalog" element={<PlantCatalog />} />
     </Route>
   )
 );

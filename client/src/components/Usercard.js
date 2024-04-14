@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
-function UserCard({ headerText, submitHandler }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
-
+function UserCard({
+  headerText,
+  submitHandler,
+  username,
+  password,
+  setUser,
+  setPassword,
+  setUsername,
+  user,
+}) {
   return (
     <div className="shadow-3xl rounded-3xl card-body bg-neutral card w-96 text-primary">
       <h2 className="card-title ">{headerText}</h2>
@@ -24,6 +29,7 @@ function UserCard({ headerText, submitHandler }) {
             className="grow"
             placeholder="Username"
             value={username}
+            htmlFor="username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
@@ -45,6 +51,7 @@ function UserCard({ headerText, submitHandler }) {
             className="grow"
             placeholder="Password"
             value={password}
+            htmlFor="username"
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
