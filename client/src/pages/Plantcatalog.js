@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PlantCard from "../components/Plantcard";
+import PlantModal from "../components/Plantmodal";
 var json = require("../plants.json");
 
 function Plantcatalog() {
@@ -32,6 +32,7 @@ function Plantcatalog() {
           <div key={plant.id} className="shadow-xl card w-96 bg-base-100">
             <figure>
               <img
+                className="w-10rem h-10rem"
                 src={
                   "https://www.marthastewart.com/thmb/vJQe2dgakpFj-EQQJEr0zMkFVVs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/flowering-plants-statement-flowers-true-lily-getty-0623-cd669979be0249e391880d3f2085674b.jpg"
                 }
@@ -42,7 +43,7 @@ function Plantcatalog() {
               <h2 className="card-title">{plant.common_name}</h2>
               <p>{plant.scientific_name}</p>
               <div className="justify-end card-actions">
-                <button className="btn btn-primary">View</button>
+                <PlantModal plant={plant} />
               </div>
             </div>
           </div>
