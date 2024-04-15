@@ -35,9 +35,17 @@ function Plantcatalog() {
         />
       </div>
       <div className="grid grid-cols-2">
-        <div id="filters">Filters</div>
-        <div id="catalog" className="flex justify-around">
-          <div className="grid grid-cols-3 gap-4">
+        <div
+          id="filters"
+          className="flex justify-around m-20 shadow-xl w-80 card w-100 bg-neutral text-neutral-content"
+        >
+          Filters
+        </div>
+        <div
+          id="catalog"
+          className="flex justify-around shadow-xl card w-100 bg-neutral"
+        >
+          <div className="grid grid-cols-3 gap-4 card-body ">
             {json.data.map((plant) => {
               return (
                 <div
