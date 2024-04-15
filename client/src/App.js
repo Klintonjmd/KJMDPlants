@@ -21,8 +21,8 @@ function App() {
           </Link>
           <p className="py-6">
             Already have an account?{" "}
-            <Link className="" to="/signin">
-              <p className="underline">Login here!</p>
+            <Link className="underline" to="/signin">
+              Login here!
             </Link>
           </p>
         </div>
