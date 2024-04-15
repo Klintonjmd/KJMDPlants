@@ -26,29 +26,52 @@ function Plantcatalog() {
   }, []);
 
   return (
-    <div>
-      {json.data.map((plant) => {
-        return (
-          <div key={plant.id} className="shadow-xl card w-96 bg-base-100">
-            <figure>
-              <img
-                className="w-10rem h-10rem"
-                src={
-                  "https://www.marthastewart.com/thmb/vJQe2dgakpFj-EQQJEr0zMkFVVs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/flowering-plants-statement-flowers-true-lily-getty-0623-cd669979be0249e391880d3f2085674b.jpg"
-                }
-                alt={plant.common_name}
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{plant.common_name}</h2>
-              <p>{plant.scientific_name}</p>
-              <div className="justify-end card-actions">
-                <PlantModal plant={plant} />
-              </div>
-            </div>
+    <div className="bg-base-100">
+      <div id="search-area" className="flex my-6 justify-items-stretch">
+        <input
+          type="text"
+          placeholder="Type here"
+          className="w-full max-w-xs justify-self-end input input-bordered m-t-40"
+        />
+      </div>
+      <div className="grid grid-cols-2">
+        <div id="filters">Filters</div>
+        <div id="catalog" className="flex justify-around">
+          <div className="grid grid-cols-3 gap-4">
+            {json.data.map((plant) => {
+              return (
+                <div
+                  key={plant.id}
+                  className="shadow-xl min-w-60 max-w-60 max-h-80 min-h-80 card bg-base-100"
+                >
+                  <figure>
+                    <img
+                      className="rounded-lg"
+                      src={
+                        "https://www.marthastewart.com/thmb/vJQe2dgakpFj-EQQJEr0zMkFVVs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/flowering-plants-statement-flowers-true-lily-getty-0623-cd669979be0249e391880d3f2085674b.jpg"
+                      }
+                      alt={plant.common_name}
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title">{plant.common_name}</h2>
+                    <p>{plant.scientific_name}</p>
+                    <div className="justify-end card-actions">
+                      <PlantModal plant={plant} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
+        </div>
+      </div>
+      <div id="pagination" className="join">
+        <button className="join-item btn btn-active">1</button>
+        <button className="join-item btn">2</button>
+        <button className="join-item btn">3</button>
+        <button className="join-item btn">4</button>
+      </div>
     </div>
   );
 }
