@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PlantModal from "../components/Plantmodal";
-var json = require("../plants.json");
+// var json = require("../plants.json");
 
 function Plantcatalog() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     document.title = "Plant Catalog";
@@ -24,6 +24,7 @@ function Plantcatalog() {
 
     fetchData();
   }, []);
+  console.log(data);
 
   return (
     <div className="bg-base-100">
@@ -46,7 +47,7 @@ function Plantcatalog() {
           className="flex justify-around shadow-xl card w-100 bg-neutral"
         >
           <div className="grid grid-cols-3 gap-4 card-body ">
-            {json.data.map((plant) => {
+            {data.map((plant) => {
               return (
                 <div
                   key={plant.id}
